@@ -1,6 +1,8 @@
 <?php
 class blackJack {
     public $score = 0;
+    public $playercard = "";
+    public $dealercard = "";
 
     public $cards = array("2C"=>2,"3C"=>3,"4C"=>4,"5C"=>5,"6C"=>6,"7C"=>7,"8C"=>8,"9C"=>9,"10C"=>10,"JC"=>10,"QC"=>10,"KC"=>10,"AC"=>11,
                     "2H"=>2,"3H"=>3,"4H"=>4,"5H"=>5,"6H"=>6,"7H"=>7,"8H"=>8,"9H"=>9,"10H"=>10,"JH"=>10,"QH"=>10,"KH"=>10,"AH"=>11,
@@ -10,8 +12,13 @@ class blackJack {
        $this->cards;
        $random_cards=array_rand($this->cards,2);
        echo '<img src="deckOfCards/'.$random_cards[0].'.png" class="player-hand"></br>';
+
+       $_SESSION['card0'] = $random_cards[0];
+       $_SESSION['card1'] = $random_cards[1];
        echo '<img src="deckOfCards/'.$random_cards[1].'.png" class="player-hand"></br>';
     }
+
+
         
     function Hit(){
 

@@ -1,17 +1,22 @@
 <?php
 session_start();
 include 'blackJack.php';
-//  $_SESSION['startDeal'] = boolean;
+$startDeal = false;
+$showDeal = false;
+$showDeal = $_SESSION['showDeal'];
+$startDeal = $_SESSION['startDeal'];
 
-if (isset($_POST['deal'])){
+if ($startDeal == false){
     $_SESSION['playerOne'] = new blackJack();
-    $_SESSION['playerOne']->Deal(); 
+
     
     $_SESSION['dealer'] = new blackJack();
-    $_SESSION['dealer']->Deal();
 
-    $_SESSION['startDeal'] = false;
-} 
+
+    $_SESSION['startDeal'] = true;
+
+}
+
 
 
 
@@ -33,14 +38,42 @@ if (isset($_POST['deal'])){
         <div class="players">
             <div class="DC">
                 <div class="dealer">
-                    <form action="" method="POST">
-                        <input type="submit" name="deal">
+                    <form action="session.php" method="POST">
+                        <input type="submit" name="restart" value="Restart game">
+                        <input type="submit" name="quit" value="Quit game">
                     </form>
                 </div>
-                <div class="cardDealer">cardD</div>
+                <div class="cardDealer">cardD
+                    <?php
+                    if ($showDeal == false) {
+                        $_SESSION['showDeal'] = true;
+                        $showDeal = true;
+                        $_SESSION['dealer']->Deal();
+
+
+                    } else {
+                        echo '<img src="deckOfCards/' . $_SESSION['card0'] .'.png" class="player-hand"></br>';
+                        echo '<img src="deckOfCards/' . $_SESSION['card1'] .'.png" class="player-hand"></br>';
+                    }
+                    ?>
+                </div>
             </div>
             <div class="PC">
-                <div class="cardPlayer">cardP</div>
+                <div class="cardPlayer">cardP
+                    <?php
+                    if ($showDeal == false) {
+                        $_SESSION['showDeal'] = true;
+                        $showDeal = true;
+                        $_SESSION['playerOne']->Deal();
+
+
+                    } else {
+
+                        echo '<img src="deckOfCards/' . $_SESSION['card0'] .'.png" class="player-hand"></br>';
+                        echo '<img src="deckOfCards/' . $_SESSION['card1'] .'.png" class="player-hand"></br>';
+                    }
+                    ?>
+                    </div>
                 <div class="player">player</div>
             </div>
         </div>
