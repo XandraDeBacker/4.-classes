@@ -9,8 +9,8 @@ class blackJack {
     function Deal(){
        $this->cards;
        $random_cards=array_rand($this->cards,2);
-       echo '<img src="/deckOfCards/'.$random_cards[0].'.png" class="player-hand"></br>';
-       echo '<img src="/deckOfCards/'.$random_cards[1].'.png" class="player-hand"></br>';
+       echo '<img src="deckOfCards/'.$random_cards[0].'.png" class="player-hand"></br>';
+       echo '<img src="deckOfCards/'.$random_cards[1].'.png" class="player-hand"></br>';
     }
         
     function Hit(){

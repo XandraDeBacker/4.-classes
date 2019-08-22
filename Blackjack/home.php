@@ -13,7 +13,11 @@
         <div class="background" id="background">
             <div class="players">
                 <div class="DC">
-                    <div class="dealer">dealer</div>
+                    <div class="dealer">
+                        <form action="game.php" method="POST">
+                            <input type="submit" name="deal">
+                        </form>
+                    </div>
                     <div class="cardDealer">cardD</div>
                 </div>
                 <div class="PC">
