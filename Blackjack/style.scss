@@ -1,0 +1,84 @@
+
+.wrapper{
+    display: flex;
+    justify-content: space-evenly;
+
+    .background {
+        display: flex;
+        width: 1080px;
+        height: auto;
+        background-image: url(img/background.jpg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        .players{
+            margin: 5px auto 10px auto;
+            height: 490px;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+            .DC{
+                display: flex;
+                flex-flow: column;
+                .dealer{
+                    width: 100px
+                }
+                .cardDealer{
+                   
+                    height: 50px;
+                    border: 1px solid black;
+
+                    height: 65px;
+                    width: 100px;
+                    border: 1px solid black;
+                    // margin: 60px auto 0 auto;
+                }
+            }
+            .PC{
+                display: flex;
+                flex-flow: column;
+                .cardPlayer{
+                    height: 65px;
+                    width: 100px;
+                    border: 1px solid black;
+                }
+            }
+        }
+        .dealer {
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+        }
+        .player{
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+        }
+        
+    }
+    .sidebar{
+        width: 150px;
+        height: 540px;
+        border: 1px solid black;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        #scoreDealer{
+            border: 1px solid black;
+            
+        }
+        #scorePlayer{
+            border: 1px solid black;
+            
+        }
+        .scoreDisplay{
+            display: flex;
+            flex-flow: column;
+        }
+    }
+}
+.player-hand{
+    width: 25px;
+    height: 50px;
+}

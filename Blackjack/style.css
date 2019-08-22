@@ -1,0 +1,130 @@
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.wrapper .background {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1080px;
+  height: auto;
+  background-image: url(img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.wrapper .background .players {
+  margin: 5px auto 10px auto;
+  height: 490px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper .background .players .DC {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.wrapper .background .players .DC .dealer {
+  width: 100px;
+}
+
+.wrapper .background .players .DC .cardDealer {
+  height: 50px;
+  border: 1px solid black;
+  height: 65px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+.wrapper .background .players .PC {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.wrapper .background .players .PC .cardPlayer {
+  height: 65px;
+  width: 100px;
+  border: 1px solid black;
+}
+
+.wrapper .background .dealer {
+  width: 100px;
+  height: 50px;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .background .player {
+  width: 100px;
+  height: 50px;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrapper .sidebar {
+  width: 150px;
+  height: 540px;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.wrapper .sidebar #scoreDealer {
+  border: 1px solid black;
+}
+
+.wrapper .sidebar #scorePlayer {
+  border: 1px solid black;
+}
+
+.wrapper .sidebar .scoreDisplay {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+.player-hand {
+  width: 25px;
+  height: 50px;
+}
+/*# sourceMappingURL=style.css.map */
