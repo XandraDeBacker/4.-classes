@@ -72,13 +72,8 @@
 }
 
 .player-hand {
-  width: 25px;
-  height: 50px;
-}
-
-.dealer-hand {
-  width: 25px;
-  height: 50px;
+  width: 45px;
+  height: 60px;
 }
 
 /*# sourceMappingURL=style.css.map */

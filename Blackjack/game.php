@@ -9,16 +9,11 @@ $startDeal = $_SESSION['startDeal'];
 if ($startDeal == false){
     $_SESSION['playerOne'] = new blackJack();
 
-    
     $_SESSION['dealer'] = new blackJack();
 
 
     $_SESSION['startDeal'] = true;
-
 }
-
-
-
 
 ?>
 
@@ -49,11 +44,12 @@ if ($startDeal == false){
                         $_SESSION['showDeal'] = true;
                         $showDeal = true;
                         $_SESSION['dealer']->Deal();
-
+                        echo '<img src="deckOfCards/' . $_SESSION['card3'] .'.png" class="player-hand">';
+                        echo '<img src="deckOfCards/' . $_SESSION['card4'] .'.png" class="player-hand">';
 
                     } else {
-                        echo '<img src="deckOfCards/' . $_SESSION['card0'] .'.png" class="player-hand"></br>';
-                        echo '<img src="deckOfCards/' . $_SESSION['card1'] .'.png" class="player-hand"></br>';
+                        echo '<img src="deckOfCards/' . $_SESSION['card3'] .'.png" class="player-hand">';
+                        echo '<img src="deckOfCards/' . $_SESSION['card4'] .'.png" class="player-hand">';
                     }
                     ?>
                 </div>
@@ -69,11 +65,12 @@ if ($startDeal == false){
 
                     } else {
 
-                        echo '<img src="deckOfCards/' . $_SESSION['card0'] .'.png" class="player-hand"></br>';
-                        echo '<img src="deckOfCards/' . $_SESSION['card1'] .'.png" class="player-hand"></br>';
+                        echo '<img src="deckOfCards/' . $_SESSION['card0'] .'.png" class="player-hand">';
+                        echo '<img src="deckOfCards/' . $_SESSION['card1'] .'.png" class="player-hand">';
                     }
+
                     ?>
-                    </div>
+                </div>
                 <div class="player">player</div>
             </div>
         </div>
@@ -83,15 +80,19 @@ if ($startDeal == false){
 
         <div class="scoreDisplay">
             <div id="scoreDealer">scoreDealer</div>
+            <?php echo $_SESSION['scoreDealer']; ?>
 
         </div>
         <div id="buttons">
             <button id="hit">hit</button>
             <button id="stand">stand</button>
             <button id="surrender">give up</button>
-            <div id="scorePlayer">scorePlayer</div>
+            <div id="scorePlayer">scorePlayer
+                <?php echo $_SESSION['scorePlayer']; ?>
+            </div>
         </div>
     </div>
 </div>
 </body>
 </html>
+

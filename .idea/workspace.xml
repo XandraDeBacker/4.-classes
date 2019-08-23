@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59061f5d-9e1a-4cbb-a611-b4d0efa9471d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blackjack/blackJack.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blackjack/blackJack.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Blackjack/game.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blackjack/game.php" afterDir="false" />
@@ -48,7 +46,7 @@
     </option>
   </component>
   <component name="RunManager" selected="PHP Script.blackJack.php">
-    <configuration name="blackJack.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Blackjack/blackJack.php">
+    <configuration name="blackJack.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/Blackjack/blackJack.php">
       <method v="2" />
     </configuration>
     <configuration name="game.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Blackjack/game.php">
@@ -56,7 +54,6 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHP Script.blackJack.php" />
         <item itemvalue="PHP Script.game.php" />
       </list>
     </recent_temporary>
@@ -72,7 +69,8 @@
       <option name="presentableId" value="Default" />
       <updated>1566483425678</updated>
       <workItem from="1566483427554" duration="2781000" />
-      <workItem from="1566498117428" duration="11246000" />
+      <workItem from="1566498117428" duration="11846000" />
+      <workItem from="1566543918300" duration="11028000" />
     </task>
     <servers />
   </component>

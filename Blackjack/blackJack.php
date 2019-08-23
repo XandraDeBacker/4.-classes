@@ -1,3 +1,4 @@
+
 <?php
 class blackJack {
     public $score = 0;
@@ -11,15 +12,23 @@ class blackJack {
     function Deal(){
        $this->cards;
        $random_cards=array_rand($this->cards,2);
-       echo '<img src="deckOfCards/'.$random_cards[0].'.png" class="player-hand"></br>';
+       $random_cards00=array_rand($this->cards,2);
+    //    echo '<img src="deckOfCards/'.$random_cards[0].'.png" class="player-hand"></br>';
 
        $_SESSION['card0'] = $random_cards[0];
        $_SESSION['card1'] = $random_cards[1];
-       echo '<img src="deckOfCards/'.$random_cards[1].'.png" class="player-hand"></br>';
+        $this->score = $this->cards[$random_cards[0]] + $this->cards[$random_cards[1]];
+        $_SESSION['scorePlayer'] = $this->score;
+    //    echo '<img src="deckOfCards/'.$random_cards[1].'.png" class="player-hand"></br>';
+
+       $_SESSION['card3'] = $random_cards00[0];
+       $_SESSION['card4'] = $random_cards00[1];
+       $this->score = $this->cards[$random_cards00[0]] + $this->cards[$random_cards00[1]];
+       $_SESSION['scoreDealer'] = $this->score;
+
     }
 
 
-        
     function Hit(){
 
     }
@@ -31,5 +40,6 @@ class blackJack {
     function Surrender(){
 
     }
+
 }
 ?>
