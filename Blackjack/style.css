@@ -13,6 +13,7 @@
 .wrapper .background .players {
   margin: 5px auto 10px auto;
   height: 490px;
+  width: 300px;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -25,11 +26,8 @@
   width: 100px;
 }
 .wrapper .background .players .DC .cardDealer {
-  height: 50px;
-  border: 1px solid black;
   height: 65px;
-  width: 100px;
-  border: 1px solid black;
+  width: 500px;
 }
 .wrapper .background .players .PC {
   display: flex;
@@ -37,8 +35,8 @@
 }
 .wrapper .background .players .PC .cardPlayer {
   height: 65px;
-  width: 100px;
-  border: 1px solid black;
+  width: 200px;
+  overflow: visible;
 }
 .wrapper .background .dealer {
   width: 100px;

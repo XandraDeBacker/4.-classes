@@ -11,8 +11,9 @@
         background-repeat: no-repeat;
         background-size: contain;
         .players{
-            margin: 5px auto 10px auto;
+           margin: 5px auto 10px auto;
             height: 490px;
+            width: 300px;
             display: flex;
             flex-flow: column;
             justify-content: space-between;
@@ -23,13 +24,10 @@
                     width: 100px
                 }
                 .cardDealer{
-                   
-                    height: 50px;
-                    border: 1px solid black;
-
+                    
                     height: 65px;
-                    width: 100px;
-                    border: 1px solid black;
+                    width: 500px;
+
                     // margin: 60px auto 0 auto;
                 }
             }
@@ -38,8 +36,8 @@
                 flex-flow: column;
                 .cardPlayer{
                     height: 65px;
-                    width: 100px;
-                    border: 1px solid black;
+                    width: 200px;
+                    overflow: visible;
                 }
             }
         }
