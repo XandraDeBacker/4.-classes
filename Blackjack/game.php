@@ -62,7 +62,11 @@ $_SESSION['dealer'] = new blackJack();
                         if (isset($_POST['player-hit'])) {
 
                             $playerOne->Hit();
-                            echo '<img src="deckOfCards/' . $_SESSION['newCard'] .'.png" class="player-hand">';
+                            $restof = $_SESSION['newcardarray'];
+                            foreach ($restof as $key => $value) {
+                                echo '<img src="deckOfCards/' . $key . '.png" class="player-hand">';
+                            }
+
                         }
 
                     }

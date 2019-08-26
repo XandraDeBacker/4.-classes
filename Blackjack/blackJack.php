@@ -8,6 +8,7 @@ class blackJack {
     public $random_cards1;
     public $turn;
     public $indexcard = 0;
+    public $newcardfirstrun = true;
 
     // array of playing cards
     public $cards = array("2C"=>2,"3C"=>3,"4C"=>4,"5C"=>5,"6C"=>6,"7C"=>7,"8C"=>8,"9C"=>9,"10C"=>10,"JC"=>10,"QC"=>10,"KC"=>10,"AC"=>11,
@@ -36,7 +37,15 @@ class blackJack {
 
     public function Hit(){
       $newCard = array_rand($this->cards, 1);
+      if($this->newcardfirstrun == true) {
+          $_SESSION['newcardarray'][$newCard] = $this->cards[$newCard];
+          $_SESSION['newcardfirstrun'] = false;
+      } else {
+          $_SESSION['newcardarray'][] += [$newCard => $this->cards[$newCard]];
+      }
       $_SESSION['newCard'] = $newCard;
+      //echo $_SESSION['newcardarray'][0];
+        $_SESSION['scorePlayer'] += $this->cards[$newCard];
     }
 
     function Stand(){
