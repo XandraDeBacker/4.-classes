@@ -32,6 +32,18 @@ $_SESSION['dealer'] = new blackJack();
                 </div>
                 <div class="cardDealer">
                     <?php
+                    if(isset($_POST['player-stand'])) {
+                        $_SESSION['turn'] = true;
+                        $_SESSION['stand'] = true;
+
+                    }
+                    if(isset($_POST['player-surrender'])) {
+                        $_SESSION['turn'] = true;
+                        $_SESSION['surrender'] = true;
+
+                    }
+
+
                     if ($showDeal == false) { //check first time run
                         $_SESSION['showDeal'] = true;
                         $showDeal = true;
@@ -42,6 +54,14 @@ $_SESSION['dealer'] = new blackJack();
                     } else {
                         echo '<img src="deckOfCards/' . $_SESSION['card3'] .'.png" class="player-hand">';
                         echo '<img src="deckOfCards/' . $_SESSION['card4'] .'.png" class="player-hand">';
+
+                    }
+                    $playerOne->PlayDealer();
+                    if($_SESSION['turn'] == true){
+                        $restofD = $_SESSION['newcardarrayD'];
+                        foreach ($restofD as $key => $value) {
+                            echo '<img src="deckOfCards/' . $key . '.png" class="player-hand">';
+                        }
                     }
                     ?>
                 </div>
@@ -57,23 +77,39 @@ $_SESSION['dealer'] = new blackJack();
 
                     } else {
 
+
                         echo '<img src="deckOfCards/' . $_SESSION['card0'] .'.png" class="player-hand">';
                         echo '<img src="deckOfCards/' . $_SESSION['card1'] .'.png" class="player-hand">';
                         if (isset($_POST['player-hit'])) {
 
                             $playerOne->Hit();
-                            $restof = $_SESSION['newcardarray'];
-                            foreach ($restof as $key => $value) {
-                                echo '<img src="deckOfCards/' . $key . '.png" class="player-hand">';
-                            }
+
+
 
                         }
+                        $restof = $_SESSION['newcardarray'];
+                        foreach ($restof as $key => $value) {
+                            echo '<img src="deckOfCards/' . $key . '.png" class="player-hand">';
+                        }
+
+                    }
+
+
+
+                    ?>
+                </div>
+                <div class="player">
+                    <?php $playerOne->Ace();
+                    if(isset($_POST['ace1'])) {
+                        $_SESSION['scorePlayer'] -= 10;
+                        echo '<script>';
+                        echo 'document.getElementById("ace1").remove();';
+                        echo '</script>';
 
                     }
 
                     ?>
                 </div>
-                <div class="player">player</div>
             </div>
         </div>
     </div>
@@ -87,12 +123,25 @@ $_SESSION['dealer'] = new blackJack();
         </div>
         <div id="buttons">
             <form method="post" action="">
-                <input type="submit" name="player-hit" value="hit">
-                <input type="submit" name="player-stand" value="stand">
-                <input type="submit" name="player-surrender" value="surrender">
+                <input type="submit" name="player-hit" value="hit" <?php $playerOne->DisableStandSurrender() ?>>
+                <input type="submit" name="player-stand" value="stand" <?php $playerOne->DisableStandSurrender() ?>>
+                <input type="submit" name="player-surrender" value="surrender" <?php $playerOne->DisableStandSurrender() ?>>
+
             </form>
             <div id="scorePlayer">scorePlayer
-                <?php echo $_SESSION['scorePlayer']; ?>
+                <?php echo $_SESSION['scorePlayer'];
+                if($_SESSION['turn'] == true) {
+                    if(($_SESSION['scorePlayer']) > 21) {
+                    echo "<br>kapot";
+                    }
+                }
+                if($_SESSION['stand'] == true) {
+                    echo "<br>Stand";
+                }
+                if($_SESSION['surrender'] == true) {
+                    echo "<br>surrender";
+                }
+                ?>
             </div>
         </div>
     </div>
